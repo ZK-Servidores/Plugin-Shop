@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', trans('shop::messages.cart.title'))
 
@@ -77,7 +77,7 @@
             @endif
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <h5>{{ trans('shop::messages.coupons.add') }}</h5>
 
                     <form action="{{ route('shop.cart.coupons.add') }}" method="POST" >
@@ -85,7 +85,7 @@
 
                         <div class="input-group mb-3 @error('coupon') has-validation @enderror">
                             <input type="text" class="form-control @error('coupon') is-invalid @enderror" id="coupon" name="coupon"
-                                   value="{{ old('coupon') }}" placeholder="{{ trans('shop::messages.fields.code') }}" required>
+                                   value="{{ old('coupon') }}" placeholder="Insira um cupom de desconto. Utilize ZK10 pasra receber 10% em seu primeiro pagamento." required>
 
                             <button type="submit" class="btn btn-primary">
                                 <i class="bi bi-plus-lg"></i> {{ trans('messages.actions.add') }}
@@ -147,7 +147,7 @@
 
                         <div class="input-group mb-3 @error('giftcard') has-validation @enderror">
                             <input type="text" class="form-control @error('giftcard') is-invalid @enderror" id="giftcard" name="giftcard"
-                                   value="{{ old('giftcard') }}" placeholder="{{ trans('shop::messages.fields.code') }}" required>
+                                   value="{{ old('giftcard') }}" placeholder="Insira o código do gift card." required>
 
                             <button type="submit" class="btn btn-primary">
                                 <i class="bi bi-plus-lg"></i> {{ trans('messages.actions.add') }}
